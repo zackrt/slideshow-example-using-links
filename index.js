@@ -14,16 +14,16 @@ function startSlideshow() {
     //now, show the first one
     $slides.eq(0).show();
     
-    //respond to clicks on the links
-    $("#nextLink").on("click", function(e) {
-        e.preventDefault();
+    // get unique ID using # to respond to clicks on the links
+    $("#nextLink").click(event => {
+        event.preventDefault();
         if(currentSlide+1 === maxSlides) return false;
         $slides.eq(currentSlide).hide();
         currentSlide++;
         $slides.eq(currentSlide).show();
     });
-    $("#prevLink").on("click", function(e) {
-        e.preventDefault();
+    $("#prevLink").click(event => {
+        event.preventDefault();
         if(currentSlide === 0) return false;
         $slides.eq(currentSlide).hide();
         currentSlide--;
